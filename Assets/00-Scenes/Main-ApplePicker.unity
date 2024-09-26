@@ -361,6 +361,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6785617829618725653, guid: dd5691f46c7287649b1b611cbfcf011c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7885907739909771940, guid: dd5691f46c7287649b1b611cbfcf011c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -393,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25852f5821e9fc4a998f1048585d35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ApplePrefab: {fileID: 0}
+  ApplePrefab: {fileID: 6275640733641974291, guid: c2f51bc1ccd083a4d80ee900515291b2, type: 3}
   speed: 1
   leftAndRightEdge: 20
   chanceToChangeDirection: 0.1
