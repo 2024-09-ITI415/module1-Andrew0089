@@ -12,13 +12,10 @@ public class Basket : MonoBehaviour
 void Start()
 {
         GameObject scoreGo = GameObject.Find("ScoreText");
-        if (scoreGo != null)
         {
             scoreGT = scoreGo.GetComponent<Text>();
-            if (scoreGT != null)
-            {
-                scoreGT.text = "0";
-            }
+            scoreGT.text = "0";
+            
            
         }
 }
