@@ -11,7 +11,8 @@ public class Basket : MonoBehaviour
 
 void Start()
 {
-        GameObject scoreGo = GameObject.Find("Set Dynamically");
+        GameObject scoreGo = GameObject.Find("ScoreText");
+        if (scoreGo != null )
     scoreGT = scoreGo.GetComponent<Text>();
         scoreGT.text = "0";
 }
