@@ -59,6 +59,7 @@ void Update(){
         aimingMode = false;
         ProjectileRigidbody.isKinematic = false;
         ProjectileRigidbody.velocity = -mouseDelta * velocityMult;
+        FollowCam.POI = Projectile;
         projectile = null;
     }
 }
