@@ -8,7 +8,7 @@ public class _MainCamera : MonoBehaviour{
     public float easing = 0.05f;
     public Vector2 minXY = Vector2.zero;
     [Header("Set Dynamically")]
- public float camZ;
+ public float camZ; 
  void Awake(){
     camZ = this.transform.position.z;
  }   
