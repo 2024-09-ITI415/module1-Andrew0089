@@ -73,6 +73,9 @@ void Update()
         ProjectileRigidbody.velocity = -mouseDelta * velocityMult;
         FollowCam1.POI = Projectile;
         Projectile = null;
+        MissionDemolition.ShotFired();
+        ProjectileLine.S.poi = Projectile;
     }
+    
 }
 }
