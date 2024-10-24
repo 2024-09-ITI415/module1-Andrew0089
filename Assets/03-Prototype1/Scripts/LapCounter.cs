@@ -1,15 +1,14 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro; // Import the TMPro namespace
 
 public class LapCounter : MonoBehaviour
 {
     public int totalLaps = 3;           // Total number of laps required to finish
     private int currentLap = 0;         // Current lap the player is on
-    public Text LapCounterText;          // Reference to the UI Text
+    public TMP_Text LapCounterText;      // Reference to the TMP_Text
 
     void Start()
     {
-        // Initialize the lap counter text
         if (LapCounterText == null)
         {
             Debug.LogError("LapCounterText is not assigned in the Inspector!");
@@ -20,19 +19,15 @@ public class LapCounter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if the player (marble) crosses a specific lap trigger
         if (other.CompareTag("Player"))
         {
             currentLap++;
-
-            // If the current lap exceeds total laps, declare the race finished
             if (currentLap > totalLaps)
             {
                 Debug.Log("Race Finished!");
             }
             else
             {
-                // Update the lap counter display
                 UpdateLapCounter();
             }
         }
@@ -40,7 +35,7 @@ public class LapCounter : MonoBehaviour
 
     void UpdateLapCounter()
     {
-        if (LapCounterText != null) // Check if lapCounterText is not null
+        if (LapCounterText != null)
         {
             LapCounterText.text = "Lap: " + currentLap + "/" + totalLaps;
         }
@@ -49,4 +44,5 @@ public class LapCounter : MonoBehaviour
             Debug.LogError("LapCounterText is null in UpdateLapCounter!");
         }
     }
+
 }

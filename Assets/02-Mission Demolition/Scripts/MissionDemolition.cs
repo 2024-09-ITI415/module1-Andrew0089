@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum GameMode
 {
@@ -16,9 +17,9 @@ public class MissionDemolition : MonoBehaviour
     static private MissionDemolition S;
 
     [Header("Setin Inspector")]
-    public Text uitLevel;
-    public Text uitShots;
-    public Text uitButton;
+    public TMP_Text uitLevel;
+    public TMP_Text uitShots;
+    public TMP_Text uitButton;
     public Vector3 castlePos;
     public GameObject[] castles;
 
