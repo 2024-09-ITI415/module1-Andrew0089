@@ -4,11 +4,13 @@ public class FinishLine : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        // Check if the player (marble) has reached the finish line
+        Debug.Log("Object entered trigger: " + other.gameObject.name); 
+
+      
         if (other.CompareTag("Player"))
         {
             Debug.Log("Race Finished!");
-            // Additional code to stop the marble or show race results can go here
+         
         }
     }
 }
