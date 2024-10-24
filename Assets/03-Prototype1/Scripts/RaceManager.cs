@@ -2,38 +2,33 @@ using UnityEngine;
 
 public class RaceManager : MonoBehaviour
 {
-    public ResetBall ballReset;  
-    public RaceTimer raceTimer;  
+    public ResetBall ballReset;
+    public RaceTimer raceTimer;
 
     void Start()
     {
-        
-        if (raceTimer != null)
-        {
-            raceTimer.StartTimer();
-        }
+        StartRace();
     }
 
-    void Update()
+    public void StartRace()
     {
-    
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartRace();
-        }
+        ballReset.ResetBallPosition(); 
+        raceTimer.StartTimer(); 
+        Debug.Log("Race Started!");
+    }
+
+    public void FinishRace(string playerName)
+    {
+        raceTimer.StopTimer(); 
+        float finalTime = raceTimer.GetTime(); 
+        Debug.Log("Race Finished! Time: " + finalTime);
     }
 
     public void RestartRace()
     {
-       
         ballReset.ResetBallPosition();
-
-       
-        if (raceTimer != null)
-        {
-            raceTimer.ResetTimer();
-        }
-
+        raceTimer.ResetTimer();
+        StartRace();
         Debug.Log("Race Restarted!");
     }
 }
