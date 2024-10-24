@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-
 
 public class ResetBall : MonoBehaviour
 {
-    public Vector3 startingPosition;  
-    public float fallThreshold = -10f;  
+    public Vector3 startingPosition;
+    public float fallThreshold = -10f;
 
     private Rigidbody rb;
 
@@ -19,16 +15,14 @@ public class ResetBall : MonoBehaviour
 
     void Update()
     {
-       
         if (transform.position.y < fallThreshold)
         {
-            ResetBallPosition();  
+            ResetBallPosition();
         }
     }
 
     public void ResetBallPosition()
     {
-        
         transform.position = startingPosition;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
