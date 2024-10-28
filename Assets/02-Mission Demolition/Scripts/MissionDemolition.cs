@@ -92,14 +92,14 @@ public void SwitchView( string eView = "")
     showing = eView;
     switch(showing)
     {
-        case "Show Slingshot":
-            FollowCam1.POI = S.castle;
+        case "Show SlingShot":
+            FollowCam1.POI = null;
             uitButton.text = "Show Castle";
             break;
 
         case "Show Castle":
             FollowCam1.POI = S.castle;
-            uitLevel.text = "Show Castle";
+            uitButton.text = "Show Both";
             break;
         case "Show Both":
             FollowCam1.POI = GameObject.Find("ViewBoth");

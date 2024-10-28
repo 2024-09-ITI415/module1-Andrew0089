@@ -9,7 +9,7 @@ public class ProjectileLine : MonoBehaviour
     public float minDist = .1f;
     private LineRenderer line;
     private GameObject _poi;
-    private List<Vector3> points;
+    public List<Vector3> points;
     void Awake()
     {
         S = this;
@@ -57,6 +57,14 @@ public class ProjectileLine : MonoBehaviour
             line.SetPosition(1, points[1]);
             line.enabled = true;
         }
+        else
+        {
+            // Normal behavior of adding a point
+            points.Add(pt);
+            line.positionCount = points.Count;
+            line.SetPosition(points.Count - 1, lastPoint);
+            line.enabled = true;
+        }
     }
     public Vector3 lastPoint
     {
@@ -71,7 +79,7 @@ public class ProjectileLine : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (poi != null)
+        if (poi == null)
         {
             if (FollowCam1.POI != null)
             {
@@ -84,12 +92,18 @@ public class ProjectileLine : MonoBehaviour
                     return;
                 }
             }
-            AddPoint();
-            if (FollowCam1.POI == null)
+            else
             {
-                poi = null;
+                return;
             }
+
         }
+        AddPoint();
+        if (FollowCam1.POI == null)
+        {
+            poi = null;
+        }
+
+
     }
 }
-
